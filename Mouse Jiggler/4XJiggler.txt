@@ -1,0 +1,51 @@
+REM Random Mouse Mover
+REM This script will move the mouse a random amount every random number of seconds (up to 30 seconds)
+REM for a random amount of milliseconds (up to 2500ms). The script will run until the device is disconnected.
+
+REM Import the necessary libraries
+DEFAULT_DELAY 500
+DELAY 1000
+GUI SPACE
+DELAY 500
+STRING import random
+DELAY 500
+STRING import pyautogui
+DELAY 500
+STRING import time
+DELAY 500
+
+REM Start the infinite loop
+WHILE
+
+REM Calculate the random amount to move the mouse in the x and y directions
+STRING x_movement = random.randint(-500, 500)
+DELAY 500
+STRING y_movement = random.randint(-500, 500)
+DELAY 500
+
+REM Calculate the random amount of time to wait before moving the mouse again
+STRING wait_time = random.randint(1, 30)
+DELAY 500
+
+REM Move the mouse
+STRING pyautogui.moveRel(x_movement, y_movement, duration=random.uniform(0.1, 2.5))
+DELAY 500
+
+REM Wait the random amount of time before moving the mouse again
+STRING time.sleep(wait_time)
+DELAY 500
+
+END
+
+REM 00110100 01011000 01110011 01100001 01101101 01110000 01101100 01100101
+REM           ___ __   __
+REM          /   |\ \ / /
+REM         / /| | \ V / ___  __ _ _ __ ___  _ __ | | ___ 
+REM        / /_| | /   \/ __|/ _` | '_ ` _ \| '_ \| |/ _ \
+REM        \___  |/ /^\ \__ \ (_| | | | | | | |_) | |  __/
+REM            |_/\/   \/___/\__,_|_| |_| |_| .__/|_|\___|
+REM                                         | |           
+REM                                         |_|          
+REM          Visca la terra lliure i mori el mal govern
+REM
+REM 00110100 01011000 01110011 01100001 01101101 01110000 01101100 01100101
